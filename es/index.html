@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roomtally · Materiales para cada habitación, en el iPhone</title>
+    <meta name="description" content="Roomtally calcula azulejos, pintura, papel pintado, hormigón y más para cada habitación en cajas, botes, rollos y sacos enteros, en una sola lista de la compra. Soporte, valores predeterminados y fuentes, política de privacidad y condiciones de uso.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F6F4EE" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#17160F" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Roomtally/es/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Roomtally/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Roomtally/de/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Roomtally/fr/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Roomtally/es/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Roomtally/it/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Roomtally/pt-br/">
+    <link rel="alternate" hreflang="nl" href="https://starbuck-dev.github.io/Roomtally/nl/">
+    <link rel="alternate" hreflang="pl" href="https://starbuck-dev.github.io/Roomtally/pl/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Roomtally/ru/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Roomtally/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --paper: #F6F4EE; --card: #FFFFFF; --ink: #1C1A15; --mute: #65625A; --line: #DEDBD1;
+    --accent: #1E6B4A; --accent-soft: rgba(30, 107, 74, 0.08); --on-accent: #FFFFFF; --todo: #F3E3A6;
+    --shadow: 0 1px 2px rgba(28, 26, 21, 0.04);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #17160F; --card: #211F18; --ink: #F1EEE4; --mute: #A8A498; --line: #2E2B23;
+        --accent: #4FA87C; --accent-soft: rgba(79, 168, 124, 0.12); --on-accent: #17160F; --todo: #5C4A12;
+        --shadow: none;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--paper); color: var(--ink); font-size: 17px; line-height: 1.55;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.wide { max-width: 1040px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 18px;
+    padding-bottom: 8px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; font-size: 19px;
+    letter-spacing: -0.01em; text-decoration: none; min-height: 44px; }
+.brand svg { flex: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary { list-style: none; cursor: pointer; padding: 9px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--card); color: var(--ink); border: 1px solid var(--line); min-height: 44px;
+    display: flex; align-items: center; gap: 6px; }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: ""; width: 7px; height: 7px; border: solid var(--mute); border-width: 0 1.5px 1.5px 0;
+    transform: translateY(-2px) rotate(45deg); margin-left: 2px; }
+.lang ul { position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none;
+    min-width: 200px; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16); }
+.lang li a { display: block; padding: 10px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 22px 22px;
+    margin: 14px 0; box-shadow: var(--shadow); }
+h1 { font-size: 34px; line-height: 1.12; letter-spacing: -0.022em; font-weight: 800; margin: 0 0 12px;
+    text-wrap: balance; }
+h1 em, .hero em { font-style: normal; color: var(--accent); }
+h2 { font-size: 22px; line-height: 1.25; letter-spacing: -0.012em; margin: 36px 0 10px; text-wrap: balance; }
+h3 { font-size: 17px; line-height: 1.35; margin: 0 0 6px; }
+p { margin: 0 0 12px; }
+p:last-child { margin-bottom: 0; }
+p, li { color: var(--ink); }
+.mute, .date, .lead { color: var(--mute); }
+.date { font-size: 15px; margin: 0 0 18px; }
+.lead { font-size: 19px; line-height: 1.45; margin: 0 0 16px; }
+.summary { background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; margin: 0 0 8px; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+    background: var(--accent); color: var(--on-accent); font-weight: 600; padding: 11px 24px; border-radius: 999px;
+    text-decoration: none; margin-top: 6px; }
+::selection { background: var(--accent-soft); color: var(--ink); }
+.hero { padding: 28px 0 8px; }
+.hero h1 { font-size: 44px; line-height: 1.06; letter-spacing: -0.03em; margin-bottom: 14px; }
+.facts { display: flex; flex-wrap: wrap; gap: 4px 0; list-style: none; padding: 0; margin: 0;
+    font-size: 15px; font-weight: 600; }
+.facts li:not(:last-child)::after { content: "\00B7"; color: var(--mute); padding: 0 8px; }
+.card.demo { padding: 0; overflow: hidden; margin-top: 22px; }
+.demo .dh { display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px 4px; font-size: 12px;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute);
+    border-top: 1px solid var(--line); }
+.demo .dh:first-child { border-top: 0; }
+.demo .dh span { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.demo .i { display: grid; grid-template-columns: 22px 1fr auto; gap: 2px 12px; align-items: center;
+    padding: 10px 16px 12px; }
+.demo .cb { width: 20px; height: 20px; border: 1.5px solid var(--mute); border-radius: 6px; }
+.demo .on .cb { background: var(--accent); border-color: var(--accent); position: relative; }
+.demo .on .cb::after { content: ""; position: absolute; left: 6px; top: 2px; width: 5px; height: 10px;
+    border: solid var(--on-accent); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.demo .t b { display: block; font-weight: 600; font-size: 16px; line-height: 1.3; }
+.demo .t small, .demo .q small { display: block; font-size: 13px; color: var(--mute); line-height: 1.35; }
+.demo .q { text-align: right; font-size: 20px; font-weight: 800; letter-spacing: -0.01em; white-space: nowrap;
+    line-height: 1.2; }
+.demo .q small { font-weight: 500; letter-spacing: 0; }
+.links { list-style: none; margin: 22px 0 14px; padding: 0; background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+.links li + li a { border-top: 1px solid var(--line); }
+.links a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; min-height: 44px;
+    padding: 13px 16px; text-decoration: none; }
+.links a::after { content: ""; grid-row: 1 / span 2; grid-column: 2; width: 8px; height: 8px;
+    border: solid var(--mute); border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); }
+.links strong { color: var(--ink); font-size: 17px; font-weight: 600; }
+.links span { color: var(--mute); font-size: 15px; }
+.links a:hover strong { color: var(--accent); }
+.faq .card { padding: 0; }
+.faq .qa { padding: 20px 22px; }
+.faq .qa + .qa { border-top: 1px solid var(--line); }
+.faq h3 { font-size: 18px; }
+.faq p, .faq li { color: var(--ink); }
+section[id] { scroll-margin-top: 16px; }
+.numbers-head { margin-top: 44px; }
+.stamp { font-size: 15px; color: var(--mute); margin: 4px 0 0; }
+.group { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute);
+    margin: 28px 0 8px; }
+table.presets { width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0;
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 15px;
+    line-height: 1.4; box-shadow: var(--shadow); }
+table.presets col.c-preset { width: 15%; }
+table.presets col.c-regions { width: 20%; }
+table.presets col.c-values { width: 27%; }
+table.presets col.c-status { width: 16%; }
+table.presets col.c-source { width: 22%; }
+table.presets td, table.presets th { overflow-wrap: anywhere; }
+table.presets th, table.presets td { text-align: left; vertical-align: top; padding: 11px 14px;
+    border-top: 1px solid var(--line); }
+table.presets thead th { border-top: 0; font-size: 13px; font-weight: 600; color: var(--mute);
+    background: var(--paper); }
+table.presets tbody th { font-weight: 600; }
+table.presets ul { list-style: none; margin: 0; padding: 0; }
+table.presets li { color: var(--ink); white-space: nowrap; }
+table.presets .v { font-weight: 600; }
+.st { display: inline-block; font-size: 14px; }
+.st.verified { color: var(--accent); font-weight: 600; }
+.st.secondary, .st.assumption, .st.measure { color: var(--mute); }
+.src a { text-decoration: none; }
+.src a span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.host { display: block; font-size: 13px; color: var(--mute); }
+.none { color: var(--mute); }
+.notchecked ul { margin: 0; padding-left: 20px; }
+.notchecked li { margin: 4px 0; color: var(--mute); }
+.guidance { font-weight: 600; }
+mark.todo { background: var(--todo); color: var(--ink); padding: 0 4px; border-radius: 4px; }
+footer { padding-top: 20px; padding-bottom: 40px; font-size: 15px; color: var(--mute); }
+footer nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-bottom: 6px; }
+footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+footer p { color: var(--mute); margin: 0 0 4px; }
+@media (max-width: 720px) {
+    body { font-size: 16px; }
+    h1 { font-size: 30px; }
+    .card { padding: 18px 16px; }
+    .hero { padding-top: 18px; }
+    .hero h1 { font-size: 36px; }
+    .faq .qa { padding: 18px 16px; }
+    table.presets, table.presets tbody, table.presets tr, table.presets th, table.presets td { display: block; }
+    table.presets thead, table.presets colgroup { display: none; }
+    table.presets tr { border-top: 1px solid var(--line); padding: 12px 16px 14px; }
+    table.presets tbody tr:first-child { border-top: 0; }
+    table.presets th, table.presets td { border-top: 0; padding: 0; }
+    table.presets tbody th { font-size: 16px; margin-bottom: 6px; }
+    table.presets td[data-label] { display: grid; grid-template-columns: 6.5em 1fr; gap: 12px; padding: 3px 0; }
+    table.presets td[data-label]::before { content: attr(data-label); font-size: 13px; font-weight: 500;
+        color: var(--mute); padding-top: 1px; }
+    table.presets td.src.empty { display: none; }
+    table.presets li { white-space: normal; }
+}
+    </style>
+</head>
+<body>
+<header class="wrap top">
+    <a class="brand" href="./"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="0.75" y="0.75" width="28.5" height="28.5" rx="7" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/><path d="M8 21.5V8.5h7.5v6H22v7z" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/><path d="M8 5.5h7.5M8 4v3M15.5 4v3" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg><span>Roomtally</span></a>
+    <details class="lang">
+        <summary aria-label="Idioma: Español">Español</summary>
+        <ul>
+            <li><a href="../" hreflang="en" lang="en">English</a></li>
+            <li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="./" hreflang="es" lang="es" aria-current="page">Español</a></li>
+            <li><a href="../it/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+            <li><a href="../nl/" hreflang="nl" lang="nl">Nederlands</a></li>
+            <li><a href="../pl/" hreflang="pl" lang="pl">Polski</a></li>
+            <li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap">
+<section class="hero">
+<h1>Mide cada habitación una vez. Compra cajas <em>enteras</em>.</h1>
+<p class="lead">Roomtally convierte las medidas de tus habitaciones en lo que de verdad vas a comprar: cajas de azulejos, tarima laminada o moqueta, botes de pintura, rollos de papel pintado, sacos de hormigón, grava, corteza y tierra, placas de yeso, además de las contrahuellas de una escalera. Cada cifra se redondea hacia arriba una sola vez, muestra el desperdicio y la reserva, y explica por qué. Todas las habitaciones van a una sola lista de la compra, ordenada por secciones de la tienda.</p>
+<ul class="facts" aria-label="En resumen"><li>Sin anuncios</li><li>Sin cuenta</li><li>Sin suscripción</li><li>Datos no recopilados</li></ul>
+</section>
+<section class="card demo" aria-label="Una lista de la compra en Roomtally">
+<div class="dh">Suelos y azulejos<span>Baño</span></div>
+<div class="i"><span class="cb" aria-hidden="true"></span><span class="t"><b>Azulejo cerámico 300 × 600 mm</b><small>3,82 × 3,15 m · 74 azulejos con 10 % de desperdicio · 1,44 m²/caja</small></span><span class="q">10 cajas<small>9,2 → 10</small></span></div>
+<div class="dh">Pintura<span>Baño · Pasillo</span></div>
+<div class="i on"><span class="cb" aria-hidden="true"></span><span class="t"><b>Pintura plástica mate</b><small>dos manos · 10 m²/L</small></span><span class="q">5 L + 2,5 L<small>6,64 L → 7,5 L</small></span></div>
+<div class="dh">Materiales de construcción<span>Patio</span></div>
+<div class="i"><span class="cb" aria-hidden="true"></span><span class="t"><b>Hormigón preparado, 25 kg</b><small>3 × 2 m × 80 mm · 0,53 m³ con 10 % de desperdicio</small></span><span class="q">43 sacos<small>42,2 → 43</small></span></div>
+</section>
+<p class="stamp">Estimación solo orientativa — revisa la etiqueta y consulta a tu proveedor antes de comprar</p>
+<nav aria-label="Páginas">
+<ul class="links">
+    <li><a href="support/"><strong>Soporte</strong><span>Respuestas y cómo contactarnos</span></a></li>
+    <li><a href="support/#numbers"><strong>Valores y fuentes</strong><span>Cada valor predeterminado con su fecha y su fuente</span></a></li>
+    <li><a href="privacy/"><strong>Política de privacidad</strong><span>Roomtally no recopila ningún dato</span></a></li>
+    <li><a href="terms/"><strong>Condiciones de uso</strong><span>La licencia estándar de Apple y la compra única</span></a></li>
+</ul>
+</nav>
+</main>
+<footer class="wrap">
+    <nav aria-label="Páginas"><a href="support/">Soporte</a> <a href="privacy/">Política de privacidad</a> <a href="terms/">Condiciones de uso</a></nav>
+    <p>Sin relación con ningún fabricante, comercio ni autoridad de construcción.</p>
+    <p>&copy; 2026 Sergei Stasenko. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>

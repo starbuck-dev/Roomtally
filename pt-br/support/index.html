@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suporte do Roomtally · Roomtally</title>
+    <meta name="description" content="Respostas sobre caixas e arredondamento, perda, faixas de papel de parede, pés e polegadas, o desbloqueio único e como restaurá-lo, além da tabela de cada valor padrão com sua data e fonte.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F6F4EE" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#17160F" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="https://starbuck-dev.github.io/Roomtally/pt-br/support/">
+    <link rel="alternate" hreflang="en" href="https://starbuck-dev.github.io/Roomtally/support/">
+    <link rel="alternate" hreflang="de" href="https://starbuck-dev.github.io/Roomtally/de/support/">
+    <link rel="alternate" hreflang="fr" href="https://starbuck-dev.github.io/Roomtally/fr/support/">
+    <link rel="alternate" hreflang="es" href="https://starbuck-dev.github.io/Roomtally/es/support/">
+    <link rel="alternate" hreflang="it" href="https://starbuck-dev.github.io/Roomtally/it/support/">
+    <link rel="alternate" hreflang="pt-BR" href="https://starbuck-dev.github.io/Roomtally/pt-br/support/">
+    <link rel="alternate" hreflang="nl" href="https://starbuck-dev.github.io/Roomtally/nl/support/">
+    <link rel="alternate" hreflang="pl" href="https://starbuck-dev.github.io/Roomtally/pl/support/">
+    <link rel="alternate" hreflang="ru" href="https://starbuck-dev.github.io/Roomtally/ru/support/">
+    <link rel="alternate" hreflang="x-default" href="https://starbuck-dev.github.io/Roomtally/support/">
+    <style>
+:root {
+    color-scheme: light dark;
+    --paper: #F6F4EE; --card: #FFFFFF; --ink: #1C1A15; --mute: #65625A; --line: #DEDBD1;
+    --accent: #1E6B4A; --accent-soft: rgba(30, 107, 74, 0.08); --on-accent: #FFFFFF; --todo: #F3E3A6;
+    --shadow: 0 1px 2px rgba(28, 26, 21, 0.04);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #17160F; --card: #211F18; --ink: #F1EEE4; --mute: #A8A498; --line: #2E2B23;
+        --accent: #4FA87C; --accent-soft: rgba(79, 168, 124, 0.12); --on-accent: #17160F; --todo: #5C4A12;
+        --shadow: none;
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+    margin: 0; background: var(--paper); color: var(--ink); font-size: 17px; line-height: 1.55;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.wide { max-width: 1040px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 18px;
+    padding-bottom: 8px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; font-size: 19px;
+    letter-spacing: -0.01em; text-decoration: none; min-height: 44px; }
+.brand svg { flex: none; }
+.lang { position: relative; font-size: 15px; }
+.lang summary { list-style: none; cursor: pointer; padding: 9px 14px; border-radius: 999px; white-space: nowrap;
+    background: var(--card); color: var(--ink); border: 1px solid var(--line); min-height: 44px;
+    display: flex; align-items: center; gap: 6px; }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary::after { content: ""; width: 7px; height: 7px; border: solid var(--mute); border-width: 0 1.5px 1.5px 0;
+    transform: translateY(-2px) rotate(45deg); margin-left: 2px; }
+.lang ul { position: absolute; right: 0; z-index: 2; margin: 8px 0 0; padding: 6px; list-style: none;
+    min-width: 200px; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16); }
+.lang li a { display: block; padding: 10px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; }
+.lang li a:hover, .lang li a:focus-visible { background: var(--accent-soft); }
+.lang li a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 22px 22px;
+    margin: 14px 0; box-shadow: var(--shadow); }
+h1 { font-size: 34px; line-height: 1.12; letter-spacing: -0.022em; font-weight: 800; margin: 0 0 12px;
+    text-wrap: balance; }
+h1 em, .hero em { font-style: normal; color: var(--accent); }
+h2 { font-size: 22px; line-height: 1.25; letter-spacing: -0.012em; margin: 36px 0 10px; text-wrap: balance; }
+h3 { font-size: 17px; line-height: 1.35; margin: 0 0 6px; }
+p { margin: 0 0 12px; }
+p:last-child { margin-bottom: 0; }
+p, li { color: var(--ink); }
+.mute, .date, .lead { color: var(--mute); }
+.date { font-size: 15px; margin: 0 0 18px; }
+.lead { font-size: 19px; line-height: 1.45; margin: 0 0 16px; }
+.summary { background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; margin: 0 0 8px; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+    background: var(--accent); color: var(--on-accent); font-weight: 600; padding: 11px 24px; border-radius: 999px;
+    text-decoration: none; margin-top: 6px; }
+::selection { background: var(--accent-soft); color: var(--ink); }
+.hero { padding: 28px 0 8px; }
+.hero h1 { font-size: 44px; line-height: 1.06; letter-spacing: -0.03em; margin-bottom: 14px; }
+.facts { display: flex; flex-wrap: wrap; gap: 4px 0; list-style: none; padding: 0; margin: 0;
+    font-size: 15px; font-weight: 600; }
+.facts li:not(:last-child)::after { content: "\00B7"; color: var(--mute); padding: 0 8px; }
+.card.demo { padding: 0; overflow: hidden; margin-top: 22px; }
+.demo .dh { display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px 4px; font-size: 12px;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute);
+    border-top: 1px solid var(--line); }
+.demo .dh:first-child { border-top: 0; }
+.demo .dh span { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.demo .i { display: grid; grid-template-columns: 22px 1fr auto; gap: 2px 12px; align-items: center;
+    padding: 10px 16px 12px; }
+.demo .cb { width: 20px; height: 20px; border: 1.5px solid var(--mute); border-radius: 6px; }
+.demo .on .cb { background: var(--accent); border-color: var(--accent); position: relative; }
+.demo .on .cb::after { content: ""; position: absolute; left: 6px; top: 2px; width: 5px; height: 10px;
+    border: solid var(--on-accent); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.demo .t b { display: block; font-weight: 600; font-size: 16px; line-height: 1.3; }
+.demo .t small, .demo .q small { display: block; font-size: 13px; color: var(--mute); line-height: 1.35; }
+.demo .q { text-align: right; font-size: 20px; font-weight: 800; letter-spacing: -0.01em; white-space: nowrap;
+    line-height: 1.2; }
+.demo .q small { font-weight: 500; letter-spacing: 0; }
+.links { list-style: none; margin: 22px 0 14px; padding: 0; background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+.links li + li a { border-top: 1px solid var(--line); }
+.links a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; min-height: 44px;
+    padding: 13px 16px; text-decoration: none; }
+.links a::after { content: ""; grid-row: 1 / span 2; grid-column: 2; width: 8px; height: 8px;
+    border: solid var(--mute); border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); }
+.links strong { color: var(--ink); font-size: 17px; font-weight: 600; }
+.links span { color: var(--mute); font-size: 15px; }
+.links a:hover strong { color: var(--accent); }
+.faq .card { padding: 0; }
+.faq .qa { padding: 20px 22px; }
+.faq .qa + .qa { border-top: 1px solid var(--line); }
+.faq h3 { font-size: 18px; }
+.faq p, .faq li { color: var(--ink); }
+section[id] { scroll-margin-top: 16px; }
+.numbers-head { margin-top: 44px; }
+.stamp { font-size: 15px; color: var(--mute); margin: 4px 0 0; }
+.group { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mute);
+    margin: 28px 0 8px; }
+table.presets { width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0;
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 15px;
+    line-height: 1.4; box-shadow: var(--shadow); }
+table.presets col.c-preset { width: 15%; }
+table.presets col.c-regions { width: 20%; }
+table.presets col.c-values { width: 27%; }
+table.presets col.c-status { width: 16%; }
+table.presets col.c-source { width: 22%; }
+table.presets td, table.presets th { overflow-wrap: anywhere; }
+table.presets th, table.presets td { text-align: left; vertical-align: top; padding: 11px 14px;
+    border-top: 1px solid var(--line); }
+table.presets thead th { border-top: 0; font-size: 13px; font-weight: 600; color: var(--mute);
+    background: var(--paper); }
+table.presets tbody th { font-weight: 600; }
+table.presets ul { list-style: none; margin: 0; padding: 0; }
+table.presets li { color: var(--ink); white-space: nowrap; }
+table.presets .v { font-weight: 600; }
+.st { display: inline-block; font-size: 14px; }
+.st.verified { color: var(--accent); font-weight: 600; }
+.st.secondary, .st.assumption, .st.measure { color: var(--mute); }
+.src a { text-decoration: none; }
+.src a span { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.host { display: block; font-size: 13px; color: var(--mute); }
+.none { color: var(--mute); }
+.notchecked ul { margin: 0; padding-left: 20px; }
+.notchecked li { margin: 4px 0; color: var(--mute); }
+.guidance { font-weight: 600; }
+mark.todo { background: var(--todo); color: var(--ink); padding: 0 4px; border-radius: 4px; }
+footer { padding-top: 20px; padding-bottom: 40px; font-size: 15px; color: var(--mute); }
+footer nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-bottom: 6px; }
+footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+footer p { color: var(--mute); margin: 0 0 4px; }
+@media (max-width: 720px) {
+    body { font-size: 16px; }
+    h1 { font-size: 30px; }
+    .card { padding: 18px 16px; }
+    .hero { padding-top: 18px; }
+    .hero h1 { font-size: 36px; }
+    .faq .qa { padding: 18px 16px; }
+    table.presets, table.presets tbody, table.presets tr, table.presets th, table.presets td { display: block; }
+    table.presets thead, table.presets colgroup { display: none; }
+    table.presets tr { border-top: 1px solid var(--line); padding: 12px 16px 14px; }
+    table.presets tbody tr:first-child { border-top: 0; }
+    table.presets th, table.presets td { border-top: 0; padding: 0; }
+    table.presets tbody th { font-size: 16px; margin-bottom: 6px; }
+    table.presets td[data-label] { display: grid; grid-template-columns: 6.5em 1fr; gap: 12px; padding: 3px 0; }
+    table.presets td[data-label]::before { content: attr(data-label); font-size: 13px; font-weight: 500;
+        color: var(--mute); padding-top: 1px; }
+    table.presets td.src.empty { display: none; }
+    table.presets li { white-space: normal; }
+}
+    </style>
+</head>
+<body>
+<header class="wrap wide top">
+    <a class="brand" href="../"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="0.75" y="0.75" width="28.5" height="28.5" rx="7" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/><path d="M8 21.5V8.5h7.5v6H22v7z" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/><path d="M8 5.5h7.5M8 4v3M15.5 4v3" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg><span>Roomtally</span></a>
+    <details class="lang">
+        <summary aria-label="Idioma: Português (Brasil)">Português (Brasil)</summary>
+        <ul>
+            <li><a href="../../support/" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../de/support/" hreflang="de" lang="de">Deutsch</a></li>
+            <li><a href="../../fr/support/" hreflang="fr" lang="fr">Français</a></li>
+            <li><a href="../../es/support/" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../it/support/" hreflang="it" lang="it">Italiano</a></li>
+            <li><a href="./" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a></li>
+            <li><a href="../../nl/support/" hreflang="nl" lang="nl">Nederlands</a></li>
+            <li><a href="../../pl/support/" hreflang="pl" lang="pl">Polski</a></li>
+            <li><a href="../../ru/support/" hreflang="ru" lang="ru">Русский</a></li>
+        </ul>
+    </details>
+</header>
+<main class="wrap wide">
+<section class="card">
+<h1>Suporte do Roomtally</h1>
+<p class="lead">Meça cada cômodo uma vez: piso, tinta, concreto e mais em caixas, latas e sacos inteiros, numa só lista de compras.</p>
+<p><strong>Precisa de ajuda?</strong> Escreva para <a href="mailto:ssx51f@gmail.com">ssx51f@gmail.com</a>. Sergei Stasenko costuma responder em até dois dias úteis. Dica: em Ajustes › Contato, no app, o e-mail já sai com a versão do app, a versão do iOS, o aparelho, o idioma, a região e a versão dos Números.</p>
+<a class="button" href="mailto:ssx51f@gmail.com?subject=Suporte%20do%20Roomtally">Enviar e-mail ao suporte</a>
+</section>
+<section class="faq" aria-labelledby="faq-title">
+<h2 id="faq-title">Perguntas frequentes</h2>
+<div class="card">
+<div class="qa" id="boxes">
+<h3>Por que o Roomtally indica 10 caixas se eu conto 9?</h3>
+<p>Há duas formas de converter uma área em caixas, e o resultado pode diferir em uma. Pelo <strong>rótulo da caixa</strong>: a área mais a perda, dividida pela cobertura impressa na caixa, arredondada para cima uma única vez. Pelas <strong>peças por caixa</strong>: as peças necessárias, arredondadas para cima, divididas pelas peças de uma caixa. Para um piso de 12′ 6″ × 10′ 3″ com peças de 12 × 24 in e 10 % de perda, uma caixa com 15,6 sq ft no rótulo resulta em 10 caixas; com 8 peças por caixa, em 9. O rótulo é o padrão porque já leva as juntas em conta. “Por que N”, abaixo do resultado, informa o método usado e, quando os dois números que você digitou não batem, o Roomtally mostra os dois em vez de escolher um sem avisar.</p>
+</div>
+<div class="qa" id="rounding">
+<h3>Como são calculados a perda e o arredondamento?</h3>
+<p>A perda é uma porcentagem somada à área ou ao volume líquido antes de qualquer arredondamento: 10 % para assentamento reto, 15 % para diagonal, 20 % para paginação com desenho, 10 % para papel de parede e concreto, 5 % para brita, casca e terra. Em seguida, o Roomtally divide pelo que uma caixa, lata, rolo, chapa ou saco cobre e arredonda para cima uma única vez, no final. Arredondar no meio do caminho (primeiro as peças, depois as caixas) pode fazer faltar material, por isso ele nunca faz isso. A linha da perda e a sobra aparecem sempre, por exemplo “9 caixas · 71 peças com 10 % de perda · 1 sobressalente”.</p><p>Na lista de compras, o mesmo item de vários cômodos é somado antes do arredondamento: 4,4 + 4,4 caixas dão 9 caixas, não 10. Com um toque, você vê de quanto cada cômodo precisa.</p>
+</div>
+<div class="qa" id="wallpaper">
+<h3>Por que o papel de parede é contado em faixas, e não pela área?</h3>
+<p>O papel de parede é aplicado em faixas tiradas do rolo, e a repetição da estampa deixa cada faixa mais longa. O Roomtally arredonda a altura da parede para cima até um número inteiro de repetições, calcula quantas faixas um rolo rende, conta as faixas ao redor do cômodo e soma 10 %. Dividir a área da parede pela área do rolo ignora as sobras de corte e pode deixar faltar material: com uma repetição de 0,64 m, 7 rolos pela área viram 9 pelas faixas. Nos EUA, o rolo simples é só a unidade em que o preço é informado; o que se compra é o rolo duplo.</p>
+</div>
+<div class="qa" id="units">
+<h3>Posso usar pés e polegadas ou o sistema métrico?</h3>
+<p>Cada projeto tem as próprias unidades: pés, polegadas e frações até 1/16″ (ou de 1/8 a 1/32), ou milímetros e metros. Enquanto você digita, a medida aparece também no outro sistema, por exemplo “= 12,531 ft · 3.820 mm · arredondado para 1/16″”. As medidas são guardadas com exatidão, então nada se altera quando você troca de sistema. Você pode digitar 12′ 6 3/8″, 3,82 m ou 3820 mm, colar uma medida copiada do app Medida ou pular as medidas com “Sei a área”.</p>
+</div>
+<div class="qa" id="unlock">
+<h3>O que é grátis e o que o Desbloqueio do Roomtally acrescenta?</h3>
+<p>Grátis, para sempre: um projeto com até três cômodos e todos os materiais, o cálculo completo com “Por que N”, a lista de compras com departamentos e marcações, o histórico, o compartilhamento da lista em texto, os widgets e o Controle. A compra única <strong>Desbloqueio do Roomtally</strong> acrescenta projetos e cômodos ilimitados, exportação da lista em PDF e CSV e ícones alternativos do app. Não há assinatura nem publicidade, e nada do que é grátis hoje será bloqueado depois. A App Store mostra o preço na sua moeda antes da compra.</p>
+</div>
+<div class="qa" id="restore">
+<h3>Como restauro a minha compra?</h3>
+<p>Inicie a sessão com a Conta Apple usada para comprar o desbloqueio e toque em <strong>Restaurar Compras</strong> em Ajustes. A compra pertence a essa Conta Apple, então funciona em qualquer iPhone ou iPad com sessão iniciada nela.</p>
+</div>
+<div class="qa" id="report">
+<h3>Um número parece errado. O que posso fazer?</h3>
+<p>Cada valor padrão diz onde e quando foi lido, ou que é uma suposição a conferir no seu rótulo. Altere qualquer valor padrão e ele passa a ser marcado como “seu valor”: os novos cálculos passam a usá-lo, e os já feitos mantêm o valor deles. Se o próprio valor padrão estiver errado, toque em <strong>Informar um número errado</strong> na aba Números: o e-mail informa o valor padrão, a sua região e as versões do app e dos Números. Cada valor padrão, com sua data e fonte, está na <a href="#numbers">tabela abaixo</a>.</p>
+</div>
+<div class="qa" id="stairs">
+<h3>A tela de escada verifica se a minha escada segue as regras de construção?</h3>
+<p>Não. Ela calcula o número de espelhos, a altura do espelho e a pisada a partir da altura entre pisos, dentro das faixas de um padrão do país, e deixa isso claro: “Dentro da faixa padrão de … · apenas para orientação”. Cada padrão indica a edição de onde foi lido, como IRC 2021, Approved Document K 2013 ou DIN 18065:2020-08, e a fonte dele está na tabela abaixo, junto com as edições que ainda não foram lidas. As regras de construção variam conforme a região e mudam com o tempo; só o órgão local responsável por obras pode dizer se uma escada é aceitável.</p>
+</div>
+<div class="qa" id="widgets">
+<h3>Como adiciono os widgets e o Controle?</h3>
+<p>Mantenha pressionada a Tela de Início ou a Tela Bloqueada, toque em Editar › Adicionar Widget e escolha Roomtally: <strong>Progresso da lista</strong> mostra quanto da lista já está no carrinho e o que vem a seguir; <strong>Último resultado</strong>, o cálculo mais recente. Na Central de Controle, adicione <strong>Novo cálculo</strong> para começar a medir de qualquer lugar. Com a Siri e o app Atalhos, você obtém “Caixas de piso” para as medidas de um cômodo, a tinta de um cômodo e a sua lista de compras.</p>
+</div>
+<div class="qa" id="backup">
+<h3>Meus projetos são sincronizados ou têm backup?</h3>
+<p>Seus projetos ficam guardados só no seu iPhone, num armazenamento que o app compartilha com os próprios widgets no mesmo aparelho. O Roomtally não tem servidor e não sincroniza entre aparelhos. Os projetos fazem parte dos backups do iPhone (Backup do iCloud ou backup no computador), então vão para um novo iPhone configurado a partir de um backup. Para guardar uma cópia em outro lugar, compartilhe a lista em texto, PDF ou CSV.</p>
+</div>
+<div class="qa" id="delete">
+<h3>Como apago os meus dados?</h3>
+<p>Deslize um cômodo na aba Cômodos e toque em Apagar: as medidas e os materiais dele são removidos, e as linhas dele saem da lista. Um projeto concluído pode ser arquivado pelo menu do projeto na aba Lista. Apagar o app remove todos os dados dele do iPhone, inclusive os dos widgets. Não guardamos nenhuma cópia, porque nada é enviado para nós.</p>
+</div>
+<div class="qa" id="devices">
+<h3>Quais aparelhos e idiomas são compatíveis?</h3>
+<p>O Roomtally funciona no iPhone e no iPad com iOS 18 ou posterior, em inglês, alemão, francês, espanhol, italiano, português do Brasil, holandês, polonês e russo. Tudo funciona sem conexão com a internet.</p>
+</div>
+</div>
+</section>
+<section id="numbers" class="numbers-head" aria-labelledby="numbers-title">
+<h2 id="numbers-title">Cada número e de onde ele vem</h2>
+<p class="lead">Um valor padrão é o número com que um novo cálculo começa: quanto rende um galão ou um litro de tinta, quanto rende um saco de concreto, quanto comprar a mais. Cada um indica onde e quando foi lido; uma suposição é um tamanho comum que não foi conferido em um rótulo. Altere qualquer um e ele passa a ser seu: novos cálculos usam esse valor, os existentes mantêm os próprios.</p>
+<p class="stamp">Números 2026-11 · conferido em 10 de novembro de 2026</p>
+<p class="stamp">Os mesmos valores padrão de Números › Sobre estes números no app, para todas as regiões. Cada grupo informa quando foi lido e de qual fonte; uma suposição não cita nenhuma.</p>
+<h3 class="group" id="numbers-paintCoverage">Rendimento da tinta</h3>
+<table class="presets" aria-labelledby="numbers-paintCoverage">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-coverage.paint.us"><th scope="row">Rendimento</th><td data-label="Regiões">Estados Unidos</td><td data-label="Valores"><ul><li>Por demão: <span class="v">350 sq ft/gal</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://sherwin-williams.com/en-us/color/color-tools/paint-calculator"><span>Paint maker&#x27;s calculator, US (a gallon covers about 350-400 sq ft)</span></a><span class="host">sherwin-williams.com</span></span></td></tr>
+<tr id="preset-coverage.paint.ca"><th scope="row">Rendimento</th><td data-label="Regiões">Canadá</td><td data-label="Valores"><ul><li>Por demão: <span class="v">350 sq ft/gal</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-coverage.paint.gb"><th scope="row">Rendimento</th><td data-label="Regiões">Reino Unido</td><td data-label="Valores"><ul><li>Por demão: <span class="v">13 m²/L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-coverage.paint.au"><th scope="row">Rendimento</th><td data-label="Regiões">Austrália</td><td data-label="Valores"><ul><li>Por demão: <span class="v">13 m²/L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-coverage.paint.pl"><th scope="row">Rendimento</th><td data-label="Regiões">Polônia</td><td data-label="Valores"><ul><li>Por demão: <span class="v">10 m²/L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-coverage.paint.eu"><th scope="row">Rendimento</th><td data-label="Regiões">Alemanha, França, Espanha, Itália, Países Baixos, Brasil, outros países</td><td data-label="Valores"><ul><li>Por demão: <span class="v">10 m²/L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+</tbody>
+</table>
+<h3 class="group" id="numbers-paintContainers">Embalagens de tinta</h3>
+<table class="presets" aria-labelledby="numbers-paintContainers">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-tins.paint.us"><th scope="row">Galões e quartos</th><td data-label="Regiões">Estados Unidos</td><td data-label="Valores"><ul><li>1 gal: <span class="v">3,785 L</span></li><li>1 qt: <span class="v">0,946 L</span></li></ul></td><td data-label="Verificado"><span class="st measure">Medida líquida dos EUA · 4 qt por galão</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-tins.paint.ca"><th scope="row">Galões e quartos</th><td data-label="Regiões">Canadá</td><td data-label="Valores"><ul><li>1 gal: <span class="v">3,78 L</span></li><li>1 qt: <span class="v">0,946 L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">Latas de tinta canadenses · 4 qt por galão · suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-tins.paint.gb"><th scope="row">Latas</th><td data-label="Regiões">Reino Unido</td><td data-label="Valores"><ul><li>Lata, opcional: <span class="v">1 L</span></li><li>Lata, conjunto padrão: <span class="v">2,5 L</span></li><li>Lata, conjunto padrão: <span class="v">5 L</span></li><li>Lata, opcional: <span class="v">10 L</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://duluxtradepaintexpert.co.uk/en/products/dulux-trade-vinyl-matt/cccId_1776858"><span>Trade paint maker, vinyl matt pack sizes 1 L, 2.5 L, 5 L, 10 L</span></a><span class="host">duluxtradepaintexpert.co.uk</span></span></td></tr>
+<tr id="preset-tins.paint.eu"><th scope="row">Latas</th><td data-label="Regiões">Austrália, França, Espanha, Itália, Países Baixos, Polônia, outros países</td><td data-label="Valores"><ul><li>Lata, opcional: <span class="v">1 L</span></li><li>Lata, conjunto padrão: <span class="v">2,5 L</span></li><li>Lata, conjunto padrão: <span class="v">5 L</span></li><li>Lata, opcional: <span class="v">10 L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-tins.paint.de"><th scope="row">Latas</th><td data-label="Regiões">Alemanha</td><td data-label="Valores"><ul><li>Lata, opcional: <span class="v">1 L</span></li><li>Lata, conjunto padrão: <span class="v">2,5 L</span></li><li>Lata, conjunto padrão: <span class="v">5 L</span></li><li>Lata, opcional: <span class="v">10 L</span></li><li>Lata, opcional: <span class="v">12,5 L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-tins.paint.br"><th scope="row">Latas</th><td data-label="Regiões">Brasil</td><td data-label="Valores"><ul><li>Lata, conjunto padrão: <span class="v">3,6 L</span></li><li>Lata, conjunto padrão: <span class="v">18 L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+</tbody>
+</table>
+<h3 class="group" id="numbers-bags">Sacos</h3>
+<table class="presets" aria-labelledby="numbers-bags">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-bags.concrete.us"><th scope="row">Concreto</th><td data-label="Regiões">Estados Unidos</td><td data-label="Valores"><ul><li>saco de 40 lb: <span class="v">0,3 cu ft</span></li><li>saco de 50 lb: <span class="v">0,375 cu ft</span></li><li>saco de 60 lb: <span class="v">0,45 cu ft</span></li><li>saco de 80 lb: <span class="v">0,6 cu ft</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.quikrete.com/PDFs/DATA_SHEET-Concrete%20Mix%201101.pdf"><span>Manufacturer data sheet, concrete mix in 40-80 lb bags, yield</span></a><span class="host">quikrete.com</span></span></td></tr>
+<tr id="preset-bags.concrete.ca"><th scope="row">Concreto</th><td data-label="Regiões">Canadá</td><td data-label="Valores"><ul><li>saco de 30 kg: <span class="v">0,014 m³</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-bags.concrete.au"><th scope="row">Concreto</th><td data-label="Regiões">Austrália</td><td data-label="Valores"><ul><li>saco de 20 kg: <span class="v">0,01 m³</span></li><li>saco de 30 kg: <span class="v">0,015 m³</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://media.bunnings.com.au/api/public/content/aa75b97a778948548189b553f6080def"><span>Manufacturer technical data sheet, concrete mix in 20 and 30 kg bags (March 2020)</span></a><span class="host">media.bunnings.com.au</span></span></td></tr>
+<tr id="preset-bags.concrete.gb"><th scope="row">Concreto</th><td data-label="Regiões">Reino Unido</td><td data-label="Valores"><ul><li>saco de 20 kg: <span class="v">0,01 m³</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-bags.concrete.de"><th scope="row">Concreto</th><td data-label="Regiões">Alemanha</td><td data-label="Valores"><ul><li>saco de 25 kg: <span class="v">0,012 m³</span></li><li>saco de 40 kg: <span class="v">0,02 m³</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-bags.concrete.eu"><th scope="row">Concreto</th><td data-label="Regiões">França, Espanha, Itália, Países Baixos, Polônia, Brasil, outros países</td><td data-label="Valores"><ul><li>saco de 25 kg: <span class="v">0,012 m³</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-posthole.gb"><th scope="row">Concreto por mourão</th><td data-label="Regiões">Reino Unido</td><td data-label="Valores"><ul><li>Buraco 200 × 450 mm: <span class="v">2/3 sacos por mourão</span></li><li>Buraco 200 × 600 mm: <span class="v">3/4 sacos por mourão</span></li><li>Buraco 200 × 750 mm: <span class="v">1 sacos por mourão</span></li><li>Buraco 250 × 450 mm: <span class="v">1 1/4 sacos por mourão</span></li><li>Buraco 250 × 600 mm: <span class="v">1 1/3 sacos por mourão</span></li><li>Buraco 250 × 750 mm: <span class="v">1 2/3 sacos por mourão</span></li><li>Buraco 300 × 450 mm: <span class="v">1 3/4 sacos por mourão</span></li><li>Buraco 300 × 600 mm: <span class="v">2 sacos por mourão</span></li><li>Buraco 300 × 750 mm: <span class="v">2 1/2 sacos por mourão</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://cdn.shopify.com/s/files/1/0222/7290/1216/files/Postcrete-V2-approved-08_10_18.pdf"><span>Manufacturer product data sheet, 20 kg post mix (08-10-2018)</span></a><span class="host">cdn.shopify.com</span></span></td></tr>
+<tr id="preset-bags.mulch.us"><th scope="row">Casca</th><td data-label="Regiões">Estados Unidos</td><td data-label="Valores"><ul><li>saco de 2 cu ft: <span class="v">2 cu ft</span></li></ul></td><td data-label="Verificado"><span class="st secondary">fonte secundária · verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.lawnstarter.com/blog/landscaping/mulch-calculator-how-much-mulch-do-you-need/"><span>Lawn-care guide, how much mulch do you need</span></a><span class="host">lawnstarter.com</span></span></td></tr>
+<tr id="preset-bags.mulch.ca"><th scope="row">Casca</th><td data-label="Regiões">Canadá</td><td data-label="Valores"><ul><li>saco de 2 cu ft: <span class="v">2 cu ft</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-bags.mulch.metric"><th scope="row">Casca</th><td data-label="Regiões">Reino Unido, Austrália, Alemanha, França, Espanha, Itália, Países Baixos, Polônia, Brasil, outros países</td><td data-label="Valores"><ul><li>saco de 50 L: <span class="v">50 L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-bags.soil.imperial"><th scope="row">Terra</th><td data-label="Regiões">Estados Unidos, Canadá</td><td data-label="Valores"><ul><li>saco de 1 cu ft: <span class="v">1 cu ft</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-bags.soil.metric"><th scope="row">Terra</th><td data-label="Regiões">Reino Unido, Austrália, Alemanha, França, Espanha, Itália, Países Baixos, Polônia, Brasil, outros países</td><td data-label="Valores"><ul><li>saco de 50 L: <span class="v">50 L</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-bags.gravel.imperial"><th scope="row">Brita</th><td data-label="Regiões">Estados Unidos, Canadá</td><td data-label="Valores"><ul><li>saco de 0.5 cu ft: <span class="v">0,5 cu ft</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-bags.gravel.metric"><th scope="row">Brita</th><td data-label="Regiões">Reino Unido, Austrália, Alemanha, França, Espanha, Itália, Países Baixos, Polônia, Brasil, outros países</td><td data-label="Valores"><ul><li>saco de 20 kg: <span class="v">0,012 m³</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-density.gravel"><th scope="row">Densidade da brita</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Brita solta: <span class="v">1,6 t/m³</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+</tbody>
+</table>
+<h3 class="group" id="numbers-sheets">Chapas de Drywall</h3>
+<table class="presets" aria-labelledby="numbers-sheets">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-sheets.drywall.us"><th scope="row">Drywall</th><td data-label="Regiões">Estados Unidos</td><td data-label="Valores"><ul><li>chapa de 4 × 8 ft, padrão: <span class="v">32 sq ft</span></li><li>chapa de 4 × 12 ft: <span class="v">48 sq ft</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-sheets.drywall.ca"><th scope="row">Drywall</th><td data-label="Regiões">Canadá</td><td data-label="Valores"><ul><li>chapa de 4 × 8 ft, padrão: <span class="v">32 sq ft</span></li><li>chapa de 4 × 12 ft: <span class="v">48 sq ft</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-sheets.drywall.gb"><th scope="row">Drywall</th><td data-label="Regiões">Reino Unido</td><td data-label="Valores"><ul><li>chapa de 1200 × 2400 mm, padrão: <span class="v">2,88 m²</span></li><li>chapa de 900 × 1800 mm: <span class="v">1,62 m²</span></li><li>chapa de 1200 × 2500 mm: <span class="v">3 m²</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-sheets.drywall.de"><th scope="row">Drywall</th><td data-label="Regiões">Alemanha</td><td data-label="Valores"><ul><li>chapa de 1250 × 2000 mm, padrão: <span class="v">2,5 m²</span></li><li>chapa de 1250 × 2500 mm: <span class="v">3,125 m²</span></li><li>chapa de 1250 × 2600 mm: <span class="v">3,25 m²</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.rigips.de/Dokumente/produktdatenblatt/produktdatenblatt-rigips-bauplatte-rb-12-5.pdf"><span>Manufacturer product data sheet, building board 12.5 mm (width 1250 mm; lengths 2000 / 2500 / 2600 mm)</span></a><span class="host">rigips.de</span></span></td></tr>
+<tr id="preset-sheets.drywall.au"><th scope="row">Drywall</th><td data-label="Regiões">Austrália</td><td data-label="Valores"><ul><li>chapa de 1200 × 2400 mm, padrão: <span class="v">2,88 m²</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-sheets.drywall.2500"><th scope="row">Drywall</th><td data-label="Regiões">França, Espanha, outros países</td><td data-label="Valores"><ul><li>chapa de 1200 × 2500 mm, padrão: <span class="v">3 m²</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-sheets.drywall.it"><th scope="row">Drywall</th><td data-label="Regiões">Itália</td><td data-label="Valores"><ul><li>chapa de 1200 × 2000 mm, padrão: <span class="v">2,4 m²</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-sheets.drywall.2600"><th scope="row">Drywall</th><td data-label="Regiões">Países Baixos, Polônia</td><td data-label="Valores"><ul><li>chapa de 1200 × 2600 mm, padrão: <span class="v">3,12 m²</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-sheets.drywall.br"><th scope="row">Drywall</th><td data-label="Regiões">Brasil</td><td data-label="Valores"><ul><li>chapa de 1200 × 1800 mm, padrão: <span class="v">2,16 m²</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+</tbody>
+</table>
+<h3 class="group" id="numbers-wallpaper">Rolos de papel de parede</h3>
+<table class="presets" aria-labelledby="numbers-wallpaper">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-rolls.wallpaper.metric"><th scope="row">Rolos</th><td data-label="Regiões">Reino Unido, Austrália, Alemanha, França, Espanha, Itália, Países Baixos, Polônia, Brasil, outros países</td><td data-label="Valores"><ul><li>Comprimento do rolo: <span class="v">10,05 m</span></li><li>Largura do rolo: <span class="v">530 mm</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.as-creation.com/en/advice-help/wallpaper-advice/roll-calculator"><span>Wallpaper maker&#x27;s roll calculator (Euro roll 10.05 m x 0.53 m)</span></a><span class="host">as-creation.com</span></span></td></tr>
+<tr id="preset-rolls.wallpaper.us"><th scope="row">Rolos</th><td data-label="Regiões">Estados Unidos, Canadá</td><td data-label="Valores"><ul><li>Comprimento do rolo: <span class="v">10,05 m</span></li><li>Largura do rolo: <span class="v">530 mm</span></li><li>Rolo duplo, unidade de preço: <span class="v">56 sq ft</span></li><li>Rolo simples, unidade de preço: <span class="v">28 sq ft</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+</tbody>
+</table>
+<h3 class="group" id="numbers-waste">Perda</h3>
+<table class="presets" aria-labelledby="numbers-waste">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-waste.tile"><th scope="row">Piso</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Assentamento reto: <span class="v">10 %</span></li><li>Assentamento diagonal: <span class="v">15 %</span></li></ul></td><td data-label="Verificado"><span class="st secondary">fonte secundária · verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.cletile.com/blogs/cle-education/how-much-extra-tile-to-buy"><span>Tile maker&#x27;s guide, how much extra tile to buy (10 % straight, 15 % diagonal)</span></a><span class="host">cletile.com</span></span></td></tr>
+<tr id="preset-waste.tile.pattern"><th scope="row">Piso com padrão</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Assentamento com padrão: <span class="v">20 %</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-waste.laminate"><th scope="row">Piso laminado</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Assentamento reto: <span class="v">10 %</span></li><li>Assentamento diagonal: <span class="v">15 %</span></li><li>Assentamento com padrão: <span class="v">20 %</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-waste.carpet"><th scope="row">Carpete</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Comprar a mais: <span class="v">10 %</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-waste.wallpaper"><th scope="row">Papel de parede</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Comprar a mais: <span class="v">10 %</span></li></ul></td><td data-label="Verificado"><span class="st secondary">fonte secundária · verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.hubo.be/fr/aide-et-conseils/calculateurs/calculateur-papier-peint/"><span>DIY retailer&#x27;s wallpaper calculator, BE (10 % waste)</span></a><span class="host">hubo.be</span></span></td></tr>
+<tr id="preset-waste.drywall"><th scope="row">Drywall</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Comprar a mais: <span class="v">10 %</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-waste.concrete"><th scope="row">Concreto</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Comprar a mais: <span class="v">10 %</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-waste.gravel"><th scope="row">Brita</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Comprar a mais: <span class="v">5 %</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-waste.mulch"><th scope="row">Casca</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Comprar a mais: <span class="v">5 %</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-waste.soil"><th scope="row">Terra</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Comprar a mais: <span class="v">5 %</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-grout.tile.imperial"><th scope="row">Junta de rejunte</th><td data-label="Regiões">Estados Unidos, Canadá</td><td data-label="Valores"><ul><li>Junta inicial: <span class="v">3,175 mm</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-grout.tile.metric"><th scope="row">Junta de rejunte</th><td data-label="Regiões">Reino Unido, Austrália, Alemanha, França, Espanha, Itália, Países Baixos, Polônia, Brasil, outros países</td><td data-label="Valores"><ul><li>Junta inicial: <span class="v">3 mm</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+</tbody>
+</table>
+<h3 class="group" id="numbers-deductions">Portas e janelas</h3>
+<table class="presets" aria-labelledby="numbers-deductions">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-deductions.us"><th scope="row">Aberturas</th><td data-label="Regiões">Estados Unidos, Canadá</td><td data-label="Valores"><ul><li>Porta: <span class="v">20 sq ft</span></li><li>Janela: <span class="v">12 sq ft</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-deductions.metric"><th scope="row">Aberturas</th><td data-label="Regiões">Reino Unido, Austrália, Alemanha, França, Espanha, Itália, Países Baixos, Polônia, Brasil, outros países</td><td data-label="Valores"><ul><li>Porta: <span class="v">1,6 m²</span></li><li>Janela: <span class="v">1,2 m²</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+</tbody>
+</table>
+<h3 class="group" id="numbers-stairs">Escada</h3>
+<table class="presets" aria-labelledby="numbers-stairs">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-stairs.us"><th scope="row">IRC 2021 R311.7</th><td data-label="Regiões">Estados Unidos</td><td data-label="Valores"><ul><li>Espelho, máx.: <span class="v">196,85 mm</span></li><li>Pisada, mín.: <span class="v">254 mm</span></li></ul></td><td data-label="Verificado"><span class="st secondary">fonte secundária · verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.viewrail.com/wp-content/uploads/2025/04/2021-International-Residential-Code-Visual-Interpretation.pdf"><span>Stair maker&#x27;s visual interpretation of the 2021 International Residential Code (R311.7.5.1, R311.7.5.2)</span></a><span class="host">viewrail.com</span></span></td></tr>
+<tr id="preset-stairs.england"><th scope="row">Approved Document K 2013</th><td data-label="Regiões">Reino Unido</td><td data-label="Valores"><ul><li>Espelho, mín.: <span class="v">150 mm</span></li><li>Espelho, máx.: <span class="v">220 mm</span></li><li>Pisada, mín.: <span class="v">220 mm</span></li><li>Pisada, máx.: <span class="v">300 mm</span></li><li>2R + G, mín.: <span class="v">550 mm</span></li><li>2R + G, máx.: <span class="v">700 mm</span></li><li>Inclinação, máx.: <span class="v">42°</span></li><li>2R + G, ideal: <span class="v">630 mm</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://assets.publishing.service.gov.uk/media/60d5bdcde90e07716f516cfd/Approved_Document_K.pdf"><span>Approved Document K (2013 edition), Table 1.1 private stair</span></a><span class="host">assets.publishing.service.gov.uk</span></span></td></tr>
+<tr id="preset-stairs.de"><th scope="row">DIN 18065:2020-08</th><td data-label="Regiões">Alemanha</td><td data-label="Valores"><ul><li>Espelho, mín.: <span class="v">140 mm</span></li><li>Espelho, máx.: <span class="v">200 mm</span></li><li>Pisada, mín.: <span class="v">230 mm</span></li><li>Pisada, máx.: <span class="v">370 mm</span></li><li>2R + G, mín.: <span class="v">590 mm</span></li><li>2R + G, máx.: <span class="v">650 mm</span></li><li>2R + G, ideal: <span class="v">630 mm</span></li></ul></td><td data-label="Verificado"><span class="st secondary">fonte secundária · verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.weka.de/architekten-ingenieure/din-18065/"><span>WEKA, DIN 18065 Tab. 2 (Wohngebaeude mit bis zu zwei Wohnungen, notwendige Treppe)</span></a><span class="host">weka.de</span></span></td></tr>
+<tr id="preset-stairs.au"><th scope="row">NCC 2022</th><td data-label="Regiões">Austrália</td><td data-label="Valores"><ul><li>Espelho, mín.: <span class="v">115 mm</span></li><li>Espelho, máx.: <span class="v">190 mm</span></li><li>Pisada, mín.: <span class="v">240 mm</span></li><li>Pisada, máx.: <span class="v">355 mm</span></li><li>2R + G, mín.: <span class="v">550 mm</span></li><li>2R + G, máx.: <span class="v">700 mm</span></li><li>2R + G, ideal: <span class="v">630 mm</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://ncc.abcb.gov.au/editions/ncc-2022/adopted/housing-provisions/11-safe-movement-and-access/part-112-stairway-and-ramp-construction"><span>ABCB NCC 2022 Housing Provisions Part 11.2, Table 11.2.2a</span></a><span class="host">ncc.abcb.gov.au</span></span></td></tr>
+<tr id="preset-stairs.ca"><th scope="row">BCBC 2018 (NBC 2015)</th><td data-label="Regiões">Canadá</td><td data-label="Valores"><ul><li>Espelho, mín.: <span class="v">125 mm</span></li><li>Espelho, máx.: <span class="v">200 mm</span></li><li>Pisada, mín.: <span class="v">255 mm</span></li><li>Pisada, máx.: <span class="v">355 mm</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://free.bcpublications.ca/civix/document/id/public/bcbc2018/bcbc_2018dbp9s98"><span>BC Building Code 2018 Division B Section 9.8, Tables 9.8.4.1 and 9.8.4.2 (private stairs)</span></a><span class="host">free.bcpublications.ca</span></span></td></tr>
+<tr id="preset-stairs.es"><th scope="row">CTE DB-SUA 2022, uso restringido</th><td data-label="Regiões">Espanha</td><td data-label="Valores"><ul><li>Espelho, máx.: <span class="v">200 mm</span></li><li>Pisada, mín.: <span class="v">220 mm</span></li></ul></td><td data-label="Verificado"><span class="st secondary">fonte secundária · verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://normatia.com/es/normativa/cte-db-sua/2022/seccion-sua-1-seguridad-frente-al-riesgo-de-caidas"><span>normatia, CTE DB-SUA 1 (2022) section 4.1, escaleras de uso restringido</span></a><span class="host">normatia.com</span></span></td></tr>
+<tr id="preset-stairs.nl"><th scope="row">Bbl 2024</th><td data-label="Regiões">Países Baixos</td><td data-label="Valores"><ul><li>Espelho, máx.: <span class="v">188 mm</span></li><li>Pisada, mín.: <span class="v">220 mm</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+<tr id="preset-stairs.pl"><th scope="row">Rozp. 2002 §68–69 (transitional)</th><td data-label="Regiões">Polônia</td><td data-label="Valores"><ul><li>Espelho, máx.: <span class="v">190 mm</span></li><li>2R + G, mín.: <span class="v">600 mm</span></li><li>2R + G, máx.: <span class="v">650 mm</span></li><li>2R + G, ideal: <span class="v">630 mm</span></li></ul></td><td data-label="Verificado"><span class="st secondary">fonte secundária · verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://arslege.pl/rozporzadzenie-ministra-infrastruktury-w-sprawie-warunkow-technicznych-jakim-powinny-odpowiadac-budynki-i-ich-usytuowanie/k218/s3055/"><span>arslege, Rozporzadzenie MI z 12.04.2002, Rozdzial 4 Schody i pochylnie (§68, §69)</span></a><span class="host">arslege.pl</span></span></td></tr>
+<tr id="preset-stairs.it"><th scope="row">DM 236/89</th><td data-label="Regiões">Itália</td><td data-label="Valores"><ul><li>Pisada, mín.: <span class="v">250 mm</span></li><li>2R + G, mín.: <span class="v">620 mm</span></li><li>2R + G, máx.: <span class="v">640 mm</span></li><li>2R + G, ideal: <span class="v">630 mm</span></li></ul></td><td data-label="Verificado"><span class="st verified">verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://www.unipr.it/sites/default/files/2026-01/DM%2014%20giugno%201989%20n.%20236%20Barriere%20architettoniche.pdf"><span>DM 14 giugno 1989 n. 236, art. 8.1.10 (full text, Universita di Parma)</span></a><span class="host">unipr.it</span></span></td></tr>
+<tr id="preset-stairs.fr"><th scope="row">Blondel rule (no binding norm)</th><td data-label="Regiões">França</td><td data-label="Valores"><ul><li>Espelho, máx.: <span class="v">200 mm</span></li><li>Pisada, mín.: <span class="v">240 mm</span></li><li>2R + G, mín.: <span class="v">600 mm</span></li><li>2R + G, máx.: <span class="v">640 mm</span></li><li>2R + G, ideal: <span class="v">620 mm</span></li></ul></td><td data-label="Verificado"><span class="st secondary">fonte secundária · verificado em 10 de novembro de 2026</span></td><td data-label="Fonte" class="src"><span class="cite"><a href="https://abctravaux.org/norme-escalier/"><span>ABC Travaux, norme escalier (maison individuelle: 20 cm maxi conseille, giron 24 a 28 cm, 2h + g = 60 a 64 cm)</span></a><span class="host">abctravaux.org</span></span></td></tr>
+</tbody>
+</table>
+<h3 class="group" id="numbers-examples">Exemplos de rótulo</h3>
+<table class="presets" aria-labelledby="numbers-examples">
+<colgroup><col class="c-preset"><col class="c-regions"><col class="c-values"><col class="c-status"><col class="c-source"></colgroup>
+<thead><tr><th scope="col">Valor padrão</th><th scope="col">Regiões</th><th scope="col">Valores</th><th scope="col">Verificado</th><th scope="col">Fonte</th></tr></thead>
+<tbody>
+<tr id="preset-examples.tilebox"><th scope="row">Como ler um rótulo, nunca um valor inicial</th><td data-label="Regiões">Todas as regiões</td><td data-label="Valores"><ul><li>Caixa de piso, exemplo: <span class="v">15,6 sq ft</span></li><li>Caixa de piso, exemplo: <span class="v">1,44 m²</span></li><li>Caixa de laminado, exemplo: <span class="v">2,179 m²</span></li></ul></td><td data-label="Verificado"><span class="st assumption">suposição — confira o rótulo</span></td><td data-label="Fonte" class="src empty"><span class="none">—</span></td></tr>
+</tbody>
+</table>
+<div class="card notchecked">
+<h3>Ainda não conferido</h3>
+<ul><li>IRC 2024, NCC 2025 e NBC 2020 ou posteriores: os intervalos de escada usam as edições citadas acima</li><li>Manual técnico da Escócia 2024: os intervalos de escada seguem a Inglaterra</li><li>Sucessor do regulamento polonês de 2002: os intervalos de 2002 valem na transição</li><li>Tamanhos de embalagem fora dos EUA, do Reino Unido e da Alemanha: tamanhos comuns, não conferidos em rótulos</li></ul>
+</div>
+<p class="guidance">Estimativa apenas para orientação — confira o rótulo e o fornecedor antes de comprar</p>
+<p><a class="button" href="mailto:ssx51f@gmail.com?subject=Roomtally%20%E2%80%94%20Informar%20um%20n%C3%BAmero%20errado">Informar um número errado</a></p>
+</section>
+<!-- /numbers -->
+</main>
+<footer class="wrap wide">
+    <nav aria-label="Páginas"><a href="./">Suporte</a> <a href="../privacy/">Política de Privacidade</a> <a href="../terms/">Termos de Uso</a></nav>
+    <p>Sem vínculo com fabricantes, lojas ou órgãos de construção.</p>
+    <p>&copy; 2026 Sergei Stasenko. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
